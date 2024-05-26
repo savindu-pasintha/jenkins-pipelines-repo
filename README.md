@@ -1,8 +1,7 @@
-Install  Java
-Download Jenkins.war file and run it on terminal with java -jar Jenkins.war
-Create Jobs
-Run the Job with Build Now button
-
+### Install  Java
+### Download Jenkins.war file and run it on terminal with `java -jar Jenkins.war`
+### Create Jobs
+### Run the Job with Build Now button
 
 ## Common pipeline script
 pipeline {
