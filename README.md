@@ -4,7 +4,7 @@ Create Jobs
 Run the Job with Build Now button
 
 
-## Common pipelnine
+## Common pipeline script
 pipeline {
     agent any
 
