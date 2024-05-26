@@ -7,7 +7,7 @@ pipeline {
                 stage('backend1') {
                     steps {
                         script {
-                            build job: 'baackend1job', wait: false
+                            build job: 'backend1job', wait: false
                         }
                     }
                 }
