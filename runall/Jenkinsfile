@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Trigger All Services') {
             parallel {
-                stage('backend1') {
+                stage('backend1 stage') {
                     steps {
                         script {
                             build job: 'backend1job', wait: false
                         }
                     }
                 }
-                stage('frontend1') {
+                stage('frontend1 stage') {
                     steps {
                         script {
                             build job: 'frontend1job', wait: false
