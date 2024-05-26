@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define any environment variables you need
+        abc="Frontend"
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone the repository
+                git url: 'https://github.com/savindu-pasintha/msdocs-python-flask-webapp-quickstart.git', branch: 'main'
+                echo "cloned"
+            }
+        }
+        
+        stage('List Files') {
+            steps {
+                // List files in the workspace
+                echo "folder"
+                sh "pwd"
+                sh 'ls -la'
+            }
+        }
+    }
+
+    // post {
+    //     always {
+    //         // Clean up
+    //         sh 'deactivate'
+    //     }
+    //     success {
+    //         echo 'Pipeline completed successfully.'
+    //     }
+    //     failure {
+    //         echo 'Pipeline failed.'
+    //     }
+    // }
+}
