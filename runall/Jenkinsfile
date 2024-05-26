@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Trigger All Services') {
+            parallel {
+                stage('backend1') {
+                    steps {
+                        script {
+                            build job: 'baackend1job', wait: false
+                        }
+                    }
+                }
+                stage('frontend1') {
+                    steps {
+                        script {
+                            build job: 'frontend1job', wait: false
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                // Custom post actions like cleanup
+                echo 'Master pipeline completed.'
+            }
+        }
+        success {
+            echo 'All services triggered successfully.'
+        }
+        failure {
+            echo 'One or more services failed to trigger.'
+        }
+    }
+}
