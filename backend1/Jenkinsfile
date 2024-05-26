@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        BRANCH_NAME = "${env.GIT_BRANCH}"
+        BRANCH_NAME = "main"
     }
     stages {
         stage('Checkout') {
