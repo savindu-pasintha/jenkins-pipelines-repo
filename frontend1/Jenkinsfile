@@ -1,6 +1,6 @@
 pipeline {
     agent any
-environment {
+    environment {
         BRANCH_NAME = "${env.GIT_BRANCH}"
     }
     stages {
