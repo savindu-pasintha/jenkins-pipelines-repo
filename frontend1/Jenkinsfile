@@ -1,20 +1,14 @@
 pipeline {
     agent any
-
     environment {
-        // Define any environment variables you need
-        abc="Frontend"
+        BRANCH_NAME = "${env.GIT_BRANCH}"
     }
-
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                // Clone the repository
-                git url: 'https://github.com/savindu-pasintha/msdocs-python-flask-webapp-quickstart.git', branch: 'uat'
-                echo "cloned"
+                git url: 'https://github.com/savindu-pasintha/msdocs-python-flask-webapp-quickstart.git', branch: "${BRANCH_NAME}"
             }
         }
-        
         stage('List Files') {
             steps {
                 // List files in the workspace
