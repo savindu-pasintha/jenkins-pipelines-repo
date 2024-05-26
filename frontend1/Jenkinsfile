@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the repository
-                git url: 'https://github.com/savindu-pasintha/msdocs-python-flask-webapp-quickstart.git', branch: 'main'
+                git url: 'https://github.com/savindu-pasintha/msdocs-python-flask-webapp-quickstart.git', branch: 'sit'
                 echo "cloned"
             }
         }
